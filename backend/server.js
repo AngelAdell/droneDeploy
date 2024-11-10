@@ -1,23 +1,28 @@
 require('dotenv').config();
+//console.log('Environment variables loaded:', process.env);
+
 const express = require('express');
 const { Configuration, OpenAIApi } = require('openai');
 
 const app = express();
 app.use(express.json());
 
-//Open API configuration
-const openApiConfig = new Configuration ({
-  apiKey: 'process.env.OPENAI_API_KEY',
+// OpenAI API key configuration
+const openaiConfig = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY, // Ensure this is correctly set in your .env file
 });
-const openai = new OpenAIApi(openAPIConfig);
+const openaiClient = new OpenAIApi(openaiConfig);
+
+//console.log('OpenAI Client:', openaiClient);
+
 
 // Create an endpoint for processing queries
 app.post('/query', async (req, res) => {
   try {
     const { query } = req.body;
-    const response = await openai.createCompletion({
+    const response = await openaiClient.createCompletion({
       model: 'text-davinci-003',
-      prompt: `Analyze the following drone data and answer this query: ${query}`,
+      prompt: `Analyze the drone data and answer this query: ${query}`,
       max_tokens: 150,
     });
     res.json({ answer: response.data.choices[0].text.trim() });
@@ -27,7 +32,8 @@ app.post('/query', async (req, res) => {
   }
 });
 
-// Start the server on port 5000
-app.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
