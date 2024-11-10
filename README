@@ -9,4 +9,18 @@ Backend tech stack: Utilized Node.js and Express.js to integrate with OpenAI to 
 4. Test the server with Postman
 
 Frontend 
-Install the neccessary packages for tailwind, create the directories, and ensure 
+1. Install the packages for tailwind, typescript, create the directories, and create the components for the header and the cards in the body.
+2. Create an env file in the root directory.
+3. Start the development server
+
+Components
+1. QueryInterface - create a text input for questions, add button, integrate with API with token usage tracking, add example queries.
+2. Header - Create a navigation bar with responsive design and mobile menu, add a logo, use tailwind colors.
+
+Test
+1. Run the Environment
+2. Enter a question about YNP drone data in the input field
+3. Click "Ask Question" 
+4. View the AI-generated response
+5. Click example queries and view results
+

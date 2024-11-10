@@ -43,7 +43,7 @@ const QueryInterface = () => {
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
-      <Text className="text-gray-700">Ask questions about drone flight data from Yellowstone National Park</Text>
+      <Text className="text-gray-700">Ask questions AI about drone flight data from Yellowstone National Park</Text>
 
       <Card className="mt-6 bg-white shadow-md border border-gray-100">
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -52,7 +52,7 @@ const QueryInterface = () => {
               placeholder="Enter your question about the drone data..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+              className="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 text-black"
             />
           </div>
           <Button

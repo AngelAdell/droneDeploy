@@ -7,8 +7,3 @@ export interface QueryResponse {
     total_tokens: number;
   };
 }
-
-export interface QueryError {
-  error: string;
-  message: string;
-}
