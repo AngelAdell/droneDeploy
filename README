@@ -1,0 +1,8 @@
+The Drone Deploy web app gives the users drone data and detailed information through queries. The AI generated data access OpenAI through and API call using Node.js and displays the information on a clean UI using React and Tailwind CSS.
+
+Frontend tech stack: Utilized Tailwind CSS and react to create a modern approach to handeling user queries 
+Backend tech stack: Utilized Node.js and Express.js to integrate with OpenAI to handle user queries. 
+
+1. Create Directories for backend and frontend and navigate to the backend (cd backend)
+2. Start the Node.js and ensure the packages for OpenAI are installed, and create OpenAI key.
+3. Create the server using Express (The app returned by express() is in fact a JavaScript Function, DESIGNED TO BE PASSED to Node’s HTTP servers as a callback to handle requests.)
